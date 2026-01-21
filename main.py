@@ -1,5 +1,5 @@
-from dice.py import rollingDice# pyright: ignore[reportMissingImports]
-from datasheets.py import datasheets# pyright: ignore[reportMissingImports]
+from dice import rollingDice# pyright: ignore[reportMissingImports]
+from datasheets import datasheets# pyright: ignore[reportMissingImports]
 
 def main():
     print ("select Function")
@@ -8,7 +8,8 @@ def main():
     
     if diceOrDataSheet in ("D", "d"):
         print ("amount of dice")
-        amountOfDice = input()
-        dice()
+        amountOfDice: str = input()
+        rollingDice()
+        
     elif diceOrDataSheet in ("S", "s"):
         datasheets()
