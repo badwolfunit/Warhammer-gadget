@@ -1,6 +1,6 @@
 #Written by Bawolfunit
 # This program is designed to help run warhammer games by using digital features. Will try to build a device built around this program. Datasheets must be provided by user
-#Copyright (C) 2026  Luca Smith
+#Copyright (C) 2026  Luca Smith(Badwolfunit)
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -16,6 +16,9 @@
 
 from dice import rollingDice# pyright: ignore[reportMissingImports]
 from datasheets import datasheets# pyright: ignore[reportMissingImports]
+
+print("Warhammer-gadget  Copyright (C) 2026  Luca Smith(Badwolfunit). This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.")
+
 
 def main():
     print ("select Function")
