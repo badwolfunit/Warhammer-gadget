@@ -26,7 +26,6 @@ def main():
     diceOrDataSheet: str = input()
     
     if diceOrDataSheet in ("D", "d"):
-        print ("amount of dice")
         amountOfDice: str = input()
         rollingDice()
         
