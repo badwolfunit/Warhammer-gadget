@@ -17,4 +17,5 @@ so far just building it as a TUI terminal application for PC. Will try to work o
 Warhammer is a trademark of Games Workshop Ltd.
 This project is not affiliated with, endorsed by, or associated with Games Workshop in any way.
 ## License
-this code is licensed under the gnu gpl and copyright of Luca Smith (Badwolfunit)
+This code is licensed under the GNU General Public License v3.0.
+Copyright © 2026 Luca Smith (Badwolfunit).
