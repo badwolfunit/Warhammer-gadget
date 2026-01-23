@@ -19,7 +19,7 @@
 import dice
 
 
-def dice(a):
+def rollingDicefunct():
     print ("amount of dice")
     amountOfDice: str = input()
     results = dice.roll(amountOfDice + 'd6')

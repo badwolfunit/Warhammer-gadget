@@ -20,16 +20,17 @@ import json
 import os
 from pathlib import Path
 
-print(f"Here are the available datasheets:")
-datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
-datasheet_files = [f for f in os.listdir(datasheets_dir) if f.endswith('.json')]
-print(datasheet_files)
-chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension): ")
-datasheetPath = datasheets_dir / f"{chooseDatasheet}.json"
-if datasheetPath.exists():
+def datasheets():
+    print(f"Here are the available datasheets:")
+    datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    datasheet_files = [f for f in os.listdir(datasheets_dir) if f.endswith('.json')]
+    print(datasheet_files)
+    chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension): ")
+    datasheetPath = datasheets_dir / f"{chooseDatasheet}.json"
+    if datasheetPath.exists():
 
-    with open(datasheetPath) as f:
-        datasheet = json.load(f)
+        with open(datasheetPath) as f:
+            datasheet = json.load(f)
         print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
-else:
-    print(f"Datasheet '{chooseDatasheet}' not found.")
+    else:
+        print(f"Datasheet '{chooseDatasheet}' not found.")

@@ -16,7 +16,7 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <https://www.gnu.org/licenses/
 
-from dice import rollingDice# pyright: ignore[reportMissingImports]
+from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
 from datasheets import datasheets# pyright: ignore[reportMissingImports]
 
 print("Warhammer-gadget  Copyright (C) 2026  Luca Smith(Badwolfunit). This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.")
@@ -29,7 +29,11 @@ def main():
     
     if diceOrDataSheet in ("D", "d"):
         amountOfDice: str = input()
-        rollingDice()
+        rollingDicefunct()
         
     elif diceOrDataSheet in ("S", "s"):
         datasheets()
+
+
+
+main()
