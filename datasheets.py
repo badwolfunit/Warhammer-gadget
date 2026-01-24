@@ -32,5 +32,6 @@ def datasheets():
         with open(datasheetPath) as f:
             datasheet = json.load(f)
         print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
+        print(json.dumps(datasheet, indent=4))
     else:
         print(f"Datasheet '{chooseDatasheet}' not found.")
