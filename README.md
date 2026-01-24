@@ -10,6 +10,7 @@ use rpi and small but long tape measure as well as a small detachable laser poin
 use left right up down and ok button interface
 
 so far just building it as a TUI terminal application for PC. Will try to work out how to expand it to the main idea. (once python version is finished, make C/C++/C# version???)
+is slightly more designed for warhammer 40k
 
 # Legal stuff
 ## Disclaimer
