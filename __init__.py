@@ -23,9 +23,11 @@ from pathlib import Path
 # This is intentionally created on import so users have a known location
 # to drop their JSON files.
 def ensure_config_dir():
+    # Create config directory for datasheets
     CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     return CONFIG_DIR
 
+# Call the function
 ensure_config_dir()
 __all__ = ["ensure_config_dir"]
