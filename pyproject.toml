@@ -16,10 +16,27 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <https://www.gnu.org/licenses/
 
+# This section defines the build system requirements for the project.
+# 
+# [build-system]
+# - `requires`: A list of packages required to build the project. 
+#   - "setuptools>=42": Specifies that version 42 or higher of setuptools is required.
+#   - "wheel": Indicates that the wheel package is needed for building wheels.
+# - `build-backend`: Specifies the backend to be used for building the project.
+#   - "setuptools.build_meta": Indicates that setuptools' build_meta module will be used as the build backend.
 [build-system]
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
+# Project Metadata
+# The [project] section contains metadata about the package.
+# - name: The name of the project/package.
+# - version: The current version of the project, following semantic versioning.
+# - description: A brief description of what the project does.
+# - readme: The file that contains the project's README, typically providing an overview and usage instructions.
+# - license: The licensing information for the project, indicating how it can be used and distributed.
+# - authors: A list of authors associated with the project, including their names and contact emails.
+# - dependencies: A list of required packages for the project, specifying version constraints.
 [project]
 name = "warhammer-gadget"
 version = "0.0.1"
@@ -28,11 +45,17 @@ readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 authors = [{name = "Badwolfunit", email = "badwolfunit@icloud.com"}]
 dependencies = [
-    "dice-lib>=4.0.0"
+    "dice>=4.0.0"
 ]
 
+# Configures setuptools to automatically discover Python packages
+# where: Specifies the root directory where setuptools should search for packages
+#        In this case, it will look for packages within the "Warhammer-gadget" directory
 [tool.setuptools.packages.find]
-where = ["warhammer_gadget"]
+where = ["."]
 
-[tool.setuptools.package-data]
-warhammer_gadget = ["datasheets_data/*.json"]
+# Defines a command-line entry point for the warhammer-gadget application.
+# When installed, creates an executable script named 'warhammer-gadget' that
+# calls the main() function from the warhammer_gadget.main module.
+[project.scripts]
+warhammer-gadget = "warhammer_gadget.main:main"
