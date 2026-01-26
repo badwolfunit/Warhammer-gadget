@@ -20,9 +20,25 @@ import dice
 
 
 def rollingDicefunct():
-    # Asks user for amount of dice to roll and rolls them
-    print ("Amount of dice to roll?")
+    """Prompts user for the number of dice to roll and displays the results.
+    
+    Uses the dice library to roll d6 dice. The user inputs the number of dice
+    and the function displays the rolled values.
+    """
+    print("Amount of dice to roll?")
     amountOfDice: str = input()
-    results = dice.roll(amountOfDice + 'd6')
-    # Prints results
-    print (results)
+    
+    try:
+        # Validate input is a positive integer
+        num_dice = int(amountOfDice)
+        if num_dice <= 0:
+            print("Please enter a positive number of dice.")
+            return
+        
+        results = dice.roll(amountOfDice + 'd6')
+        # Prints results
+        print(results)
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+    except Exception as e:
+        print(f"Error rolling dice: {e}")

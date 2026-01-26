@@ -1,16 +1,58 @@
-# Warhammer-gadget
-will end up building it as a small device around the size of a paperback book (or smaller) which can display datasheets (check copywrite laws) with a built-in tape measure, and a laser pointer to check line of sight
-dedicated Software inlcuding:
-datasheets (json format?) 
-dice rolling
-conective software (select stat and it rolls dice)
+# Warhammer Gadget
 
-hardware ideas:
-use rpi and small but long tape measure as well as a small detachable laser pointer
-use left right up down and ok button interface
+A compact digital toolbox designed to enhance your Warhammer gaming experience. This application provides utilities for managing datasheets, rolling dice, and more through a text-based user interface (TUI).
 
-so far just building it as a TUI terminal application for PC. Will try to work out how to expand it to the main idea. (once python version is finished, make C/C++/C# version???)
-is slightly more designed for warhammer 40k
+## Features
+
+- **Datasheet Management**: Load and view unit datasheets in JSON format
+- **Dice Rolling**: Quick and easy dice rolling functionality
+- **TUI Interface**: Clean terminal-based interface for PC
+
+## Future Goals
+
+The vision is to build a physical device around the size of a paperback book (or smaller) that can:
+- Display datasheets (respecting copyright laws)
+- Include a built-in tape measure
+- Feature a small detachable laser pointer for line-of-sight checks
+- Use a simple directional button interface (left, right, up, down, and OK)
+
+Hardware concepts include using a Raspberry Pi with integrated measurement tools.
+
+## Installation
+
+### Using pip
+
+```bash
+pip install warhammer-gadget
+```
+
+### From Source
+
+```bash
+git clone https://github.com/badwolfunit/Warhammer-gadget.git
+cd Warhammer-gadget
+pip install -e .
+```
+
+## Usage
+
+Run the application:
+
+```bash
+warhammer-gadget
+```
+
+### Adding Datasheets
+
+Datasheets are stored as JSON files in `~/.config/warhammer-gadget/datasheets/`. 
+
+A template datasheet is available in `warhammer_gadget/datasheet_template/template_datasheet.json` to help you create your own.
+
+**Note**: Users must provide their own datasheets. This software does not include any copyrighted content.
+
+## Development
+
+This is an early-stage project, primarily designed for Warhammer 40K. Currently implemented as a Python TUI application for PC, with plans to expand to embedded hardware in the future.
 
 # Legal stuff
 ## Disclaimer
