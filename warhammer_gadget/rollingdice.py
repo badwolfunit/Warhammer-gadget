@@ -35,7 +35,8 @@ def rollingDicefunct():
             print("Please enter a positive number of dice.")
             return
         
-        results = dice.roll(amountOfDice + 'd6')
+        # Use validated integer value for rolling
+        results = dice.roll(str(num_dice) + 'd6')
         # Prints results
         print(results)
     except ValueError:
