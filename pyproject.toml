@@ -49,6 +49,15 @@ authors = [{name = "Badwolfunit", email = "badwolfunit@icloud.com"}]
 dependencies = [
     "dice>=4.0.0"
 ]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
 
 # Configures setuptools to automatically discover Python packages
 # where: Specifies the root directory where setuptools should search for packages

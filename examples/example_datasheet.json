@@ -1,0 +1,78 @@
+{
+    "unit_name": "Space Marine Tactical Squad",
+    "stats": {
+        "movement": 6,
+        "strength": 4,
+        "toughness": 4,
+        "wounds": 2,
+        "leadership": 6,
+        "save": 3,
+        "objective_control": 2
+    },
+    "weapons": {
+        "ranged": [
+            {
+                "name": "Boltgun",
+                "range": 24,
+                "attacks": 2,
+                "ballistic_skill": 3,
+                "strength": 4,
+                "type": "Rapid Fire 1",
+                "ap": 0,
+                "damage": 1
+            }
+        ],
+        "melee": [
+            {
+                "name": "Close Combat Weapon",
+                "attacks": 3,
+                "weapon_skill": 3,
+                "strength": 4,
+                "ap": 0,
+                "damage": 1
+            }
+        ]
+    },
+    "abilities": {
+        "faction": {
+            "name": "Oath of Moment"
+        },
+        "datasheet": [
+            {
+                "name": "Tactical Flexibility",
+                "description": "This unit can split into combat squads"
+            }
+        ],
+        "wargear": [
+            {
+                "name": "Frag Grenades",
+                "description": "Blast weapons for clearing infantry"
+            }
+        ]
+    },
+    "wargear_options": [
+        "One model may replace boltgun with special weapon",
+        "One model may replace boltgun with heavy weapon",
+        "Sergeant may take melee weapon",
+        "Sergeant may take ranged weapon"
+    ],
+    "unit_composition": [
+        "1 Sergeant",
+        "4-9 Space Marines",
+        "Default: 10 Space Marines with Boltguns",
+        "Points: 90 for 5 models",
+        "Points: 180 for 10 models",
+        "Base Size: 32mm"
+    ],
+    "keywords": {
+        "keywords": [
+            "Infantry",
+            "Grenades",
+            "Imperium",
+            "Tacticus",
+            "Tactical Squad"
+        ],
+        "faction_keywords": "Adeptus Astartes"
+    },
+    "lore": "Tactical Squads are the backbone of any Space Marine army, versatile warriors capable of adapting to any battlefield situation."
+}

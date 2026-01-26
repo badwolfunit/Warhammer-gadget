@@ -48,6 +48,12 @@ Datasheets are stored as JSON files in `~/.config/warhammer-gadget/datasheets/`.
 
 A template datasheet is available in `warhammer_gadget/datasheet_template/template_datasheet.json` to help you create your own.
 
+An example datasheet is provided in the `examples/` directory. You can copy it to your config directory:
+
+```bash
+cp examples/example_datasheet.json ~/.config/warhammer-gadget/datasheets/
+```
+
 **Note**: Users must provide their own datasheets. This software does not include any copyrighted content.
 
 ## Development
