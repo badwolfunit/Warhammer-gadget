@@ -46,7 +46,12 @@ warhammer-gadget
 
 Datasheets are stored as JSON files in `~/.config/warhammer-gadget/datasheets/`. 
 
-A template datasheet is available in `warhammer_gadget/datasheet_template/template_datasheet.json` to help you create your own.
+A template datasheet is available in `warhammer_gadget/datasheet_template/template_datasheet.json`. To use it, copy it to your config directory and modify it:
+
+```bash
+cp warhammer_gadget/datasheet_template/template_datasheet.json ~/.config/warhammer-gadget/datasheets/my_unit.json
+# Then edit ~/.config/warhammer-gadget/datasheets/my_unit.json with your unit's data
+```
 
 An example datasheet is provided in the `examples/` directory. You can copy it to your config directory:
 
