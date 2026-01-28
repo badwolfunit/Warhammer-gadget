@@ -21,7 +21,6 @@ import os
 from pathlib import Path
 
 def datasheets():
-    """Lists available datasheets and allows user to select one to load."""
     # Lists available datasheets and allows user to select one to load
     print("Here are the available datasheets:")
     datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
@@ -58,4 +57,6 @@ def datasheets():
             print(f"Error loading datasheet: {e}")
     else:
         # Handle case where datasheet does not exist
-        print(f"Datasheet '{chooseDatasheet}' not found.")
+        print(f"Datasheet '{chooseDatasheet}' not found. Check spelling and existance.")
+        datasheets()
+        
