@@ -20,7 +20,6 @@ import dice
 
 
 def rollingDicefunct():
-    """Asks user for amount of dice to roll and rolls them."""
     # Asks user for amount of dice to roll and rolls them
     print("Amount of dice to roll?")
     amountOfDice: str = input()
