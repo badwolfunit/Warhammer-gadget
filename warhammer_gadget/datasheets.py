@@ -19,6 +19,7 @@
 import json
 import os
 from pathlib import Path
+import texttable
 
 def datasheets():
     # Lists available datasheets and allows user to select one to load
