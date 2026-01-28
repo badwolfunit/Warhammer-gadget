@@ -21,7 +21,7 @@ import os
 from pathlib import Path
 import texttable
 
-def datasheets():
+def datasheetsfunct():
     # Lists available datasheets and allows user to select one to load
     print("Here are the available datasheets:")
     datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
