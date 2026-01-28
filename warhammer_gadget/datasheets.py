@@ -23,22 +23,39 @@ from pathlib import Path
 def datasheets():
     """Lists available datasheets and allows user to select one to load."""
     # Lists available datasheets and allows user to select one to load
-    print(f"Here are the available datasheets:")
+    print("Here are the available datasheets:")
     datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    
+    # Check if directory exists
+    if not datasheets_dir.exists():
+        print("No datasheets directory found. Please add datasheets to ~/.config/warhammer-gadget/datasheets/")
+        return
+    
     datasheet_files = [f for f in os.listdir(datasheets_dir) if f.endswith('.json')]
+    
+    if not datasheet_files:
+        print("No datasheets found. Please add JSON files to ~/.config/warhammer-gadget/datasheets/")
+        return
+        
     print(datasheet_files)
     # Get user input for which datasheet to load
     chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension): ")
     # Create full path to datasheet
     datasheetPath = datasheets_dir / f"{chooseDatasheet}.json"
+    
     if datasheetPath.exists():
-        # Loads selected datasheet
-        with open(datasheetPath) as f:
-            datasheet = json.load(f)
+        try:
+            # Loads selected datasheet
+            with open(datasheetPath) as f:
+                datasheet = json.load(f)
             # Confirm successful load
-        print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
-        # Print datasheet content
-        print(json.dumps(datasheet, indent=4))
+            print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
+            # Print datasheet content
+            print(json.dumps(datasheet, indent=4))
+        except json.JSONDecodeError:
+            print(f"Error: '{chooseDatasheet}.json' is not a valid JSON file.")
+        except Exception as e:
+            print(f"Error loading datasheet: {e}")
     else:
         # Handle case where datasheet does not exist
         print(f"Datasheet '{chooseDatasheet}' not found.")
