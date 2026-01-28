@@ -19,7 +19,7 @@
 # This is a load of shite by the way. I can barely code this is a mix of copy pasting from stack overflow, Geeks for Geeks, W3 schools, AI autocorrect and blind luck. This is literally my first proper python project. Feel free to contribute with improvements and cleanups.
 
 from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
-from datasheets import datasheets# pyright: ignore[reportMissingImports]
+from datasheets import datasheetsfunct# pyright: ignore[reportMissingImports]
 
 def licenseInfo():
     """Prints license and copyright information."""
@@ -38,11 +38,11 @@ def main():
     # Activated function based on user input
     if diceOrDataSheet in ("D", "d"):
         # Activate dice rolling function
-        rollingDicefunct()
+        rollingdice.rollingDicefunct()
         
     elif diceOrDataSheet in ("S", "s"):
         # Activate datasheet function
-        datasheets()
+        datasheets.datasheetsfunct()
     else:
         # Invalid input handler
         print("Invalid input, please try again")
