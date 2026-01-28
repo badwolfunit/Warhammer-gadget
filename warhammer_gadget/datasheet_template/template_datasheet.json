@@ -1,4 +1,4 @@
- {
+{
     "unit_name": "name",
     "stats": {
         "movement": 0,
@@ -18,7 +18,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             {
@@ -28,7 +28,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             {
@@ -38,7 +38,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             }
         ],
@@ -48,7 +48,7 @@
                 "attacks": 0,
                 "weapon_skill": 0,
                 "strength": 0,
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             {
@@ -56,7 +56,7 @@
                 "attacks": 0,
                 "weapon_skill": 0,
                 "strength": 0,
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             }
         ]
@@ -66,43 +66,42 @@
             "name": "name"
         },
         "datasheet": [
-    {
-      "name": "name",
-      "description": "description"
-    }
-  ],
-  "wargear": [
-    {
-      "name": "name",
-      "description": "description"
-    }
-  ],
-    "wargear_options": [
-        "wargear option 1",
-        "wargear option 2",
-        "wargear option 3",
-        "wargear option 4"
-    ],
-    "unit_composition": [
-        "Unit leader line",
-        "Unit size line",
-        "Default unit loudout",
-        "Point cost line 1",
-        "Point cost line 2",
-        "Base Size: Base Size"
-    ],
-"keywords": {
-    "keywords":[
-        "keywords",
-        "keywords",
-        "keywords",
-        "keywords",
-        "keywords",
-        "keywords"
-    ],
-    "faction_keywords": "faction keywords"
-},
+            {
+                "name": "name",
+                "description": "description"
+            }
+        ],
+        "wargear": [
+            {
+                "name": "name",
+                "description": "description"
+            }
+        ],
+        "wargear_options": [
+            "wargear option 1",
+            "wargear option 2",
+            "wargear option 3",
+            "wargear option 4"
+        ],
+        "unit_composition": [
+            "Unit leader line",
+            "Unit size line",
+            "Default unit loudout",
+            "Point cost line 1",
+            "Point cost line 2",
+            "Base Size: Base Size"
+        ],
+        "keywords": {
+            "keywords": [
+                "keywords",
+                "keywords",
+                "keywords",
+                "keywords",
+                "keywords",
+                "keywords"
+            ],
+            "faction_keywords": "faction keywords"
+        },
         "lore": "lore text"
-        }
     }
-
+}
