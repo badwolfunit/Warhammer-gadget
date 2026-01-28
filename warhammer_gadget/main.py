@@ -16,23 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from .rollingdice import rollingDicefunct
-from .datasheets import datasheets
+#This is a load of shite by the way. I can barely code this is a mix of copy pasting from stack overflow, Geeks for Geeks, W3 schools, AI autocorrect and blind luck. This is literally my first proper python project. Feel free to contribute with improvements and cleanups.
 
+from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
+from datasheets import datasheets# pyright: ignore[reportMissingImports]
 
 def licenseInfo():
-    """Prints license and copyright information to the user."""
+    """Prints license and copyright information."""
+    # Prints license and copyright information
     print("Warhammer-gadget  Copyright (C) 2026  Luca Smith(Badwolfunit). This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.")
 
 
 def main():
-    """Main entry point for the Warhammer Gadget application.
-    
-    Prompts the user to select between dice rolling or datasheet viewing functionality.
-    """
+    """Main entry point - prompts user to select dice rolling or datasheet viewing."""
     # Asks user what function they want to use
-    print("Select Function")
-    print("(D)ice or data(S)heets")
+    print ("select Function")
+    print ("(D)ice or data(S)heets")
     # Get user input
     diceOrDataSheet: str = input()
     
@@ -49,7 +48,5 @@ def main():
         print("Invalid input, please try again")
         main()
 
-
-if __name__ == "__main__":
-    licenseInfo()
-    main()
+licenseInfo()
+main()
