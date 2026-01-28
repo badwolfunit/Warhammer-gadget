@@ -22,11 +22,13 @@ from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
 from datasheets import datasheets# pyright: ignore[reportMissingImports]
 
 def licenseInfo():
+    """Prints license and copyright information."""
     # Prints license and copyright information
     print("Warhammer-gadget  Copyright (C) 2026  Luca Smith(Badwolfunit). This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.")
 
 
 def main():
+    """Main entry point - prompts user to select dice rolling or datasheet viewing."""
     # Asks user what function they want to use
     print ("select Function")
     print ("(D)ice or data(S)heets")

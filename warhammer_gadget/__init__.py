@@ -1,4 +1,4 @@
-#Written by Bawolfunit
+#Written by Badwolfunit
 # This program is designed to help run warhammer games by using digital features. Will try to build a device built around this program. Datasheets must be provided by user
 #Copyright (C) 2026  Luca Smith(Badwolfunit)
 #Disclaimer:
@@ -23,6 +23,11 @@ from pathlib import Path
 # This is intentionally created on import so users have a known location
 # to drop their JSON files.
 def ensure_config_dir():
+    """Create a user config directory for datasheets if it doesn't exist.
+    
+    Returns:
+        Path: The path to the config directory
+    """
     # Create config directory for datasheets
     CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)

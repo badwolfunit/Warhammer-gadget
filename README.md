@@ -1,4 +1,9 @@
 # Warhammer-gadget
+will end up building it as a small device around the size of a paperback book (or smaller) which can display datasheets (check copyright laws) with a built-in tape measure, and a laser pointer to check line of sight
+dedicated Software including:
+datasheets (json format?) 
+dice rolling
+connective software (select stat and it rolls dice)
 
 This software is designed to help you play Warhammer using digital features. It is a work in progress as well as my first serious python project. It (should) support Windows, Linux and MacOS.
 

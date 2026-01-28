@@ -1,4 +1,4 @@
-# Written by Bawolfunit
+# Written by Badwolfunit
 # This program is designed to help run warhammer games by using digital features. Will try to build a device built around this program. Datasheets must be provided by user
 # Copyright (C) 2026  Luca Smith(Badwolfunit)
 # Disclaimer:
@@ -20,9 +20,23 @@ import dice
 
 
 def rollingDicefunct():
+    """Asks user for amount of dice to roll and rolls them."""
     # Asks user for amount of dice to roll and rolls them
-    print ("Amount of dice to roll?")
+    print("Amount of dice to roll?")
     amountOfDice: str = input()
-    results = dice.roll(amountOfDice + 'd6')
-    # Prints results
-    print (results)
+    
+    try:
+        # Validate input is a positive integer
+        num_dice = int(amountOfDice)
+        if num_dice <= 0:
+            print("Please enter a positive number of dice.")
+            return
+        
+        # Use validated integer value for rolling
+        results = dice.roll(str(num_dice) + 'd6')
+        # Prints results
+        print(results)
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+    except Exception as e:
+        print(f"Error rolling dice: {e}")
