@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#This is a load of shite by the way. I can barely code this is a mix of copy pasting from stack overflow, Geeks for Geeks, W3 schools, AI autocorrect and blind luck. This is literally my first proper python project. Feel free to contribute with improvements and cleanups.
+# This is a load of shite by the way. I can barely code this is a mix of copy pasting from stack overflow, Geeks for Geeks, W3 schools, AI autocorrect and blind luck. This is literally my first proper python project. Feel free to contribute with improvements and cleanups.
 
 from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
 from datasheets import datasheets# pyright: ignore[reportMissingImports]
