@@ -38,11 +38,11 @@ def main():
     # Activated function based on user input
     if diceOrDataSheet in ("D", "d"):
         # Activate dice rolling function
-        rollingdice.rollingDicefunct()
+        rollingDicefunct()
         
     elif diceOrDataSheet in ("S", "s"):
         # Activate datasheet function
-        datasheets.datasheetsfunct()
+        datasheetsfunct()
     else:
         # Invalid input handler
         print("Invalid input, please try again")

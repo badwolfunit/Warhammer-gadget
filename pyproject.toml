@@ -45,7 +45,7 @@ readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 authors = [{name = "Badwolfunit", email = "badwolfunit@icloud.com"}]
 dependencies = [
-    "dice>=4.0.0"
+    "dice>=4.0.0",
     "texttable>=1.7.0"
 ]
 
