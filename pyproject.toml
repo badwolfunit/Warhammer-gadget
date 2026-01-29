@@ -49,13 +49,18 @@ dependencies = [
     "texttable>=1.7.0"
 ]
 
+[project.urls]
+Homepage = "https://github.com/badwolfunit/Warhammer-gadget"
+Issues = "https://github.com/badwolfunit/Warhammer-gadget/issues"
+
+
 [tool.setuptools]
 
 # Configures setuptools to automatically discover Python packages
 # where: Specifies the root directory where setuptools should search for packages
-#        In this case, it will look for packages within the "Warhammer-gadget" directory
+#        In this case, it will look for packages within the "warhammer_gadget" directory
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["warhammer_gadget"]
 
 # Defines a command-line entry point for the warhammer-gadget application.
 # When installed, creates an executable script named 'warhammer-gadget' that
