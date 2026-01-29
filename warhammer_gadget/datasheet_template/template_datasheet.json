@@ -1,4 +1,4 @@
- {
+{
     "unit_name": "name",
     "stats": {
         "movement": 0,
@@ -75,19 +75,19 @@
                 "description": "description"
             },
             "datasheet_ability_2": {
-            "name": "name",
-            "description": "description"
+                "name": "name",
+                "description": "description"
             }
-        }
-    },
-    "wargear": {
-        "wargear_1":{
-            "name": "name",
-            "description": "description"
         },
-        "wargear_2":{
-            "name": "name",
-            "description": "description"
+        "wargear": {
+            "wargear_1":{
+                "name": "name",
+                "description": "description"
+            },
+            "wargear_2":{
+                "name": "name",
+                "description": "description"
+            }
         }
     },
     "wargear_options": [
@@ -115,5 +115,5 @@
         ],
         "faction_keywords": "faction keywords"
     },
-        "lore": "lore text"
+    "lore": "lore text"
 }

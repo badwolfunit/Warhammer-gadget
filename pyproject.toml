@@ -49,6 +49,8 @@ dependencies = [
     "texttable>=1.7.0"
 ]
 
+[tool.setuptools]
+
 # Configures setuptools to automatically discover Python packages
 # where: Specifies the root directory where setuptools should search for packages
 #        In this case, it will look for packages within the "Warhammer-gadget" directory

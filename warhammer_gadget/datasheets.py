@@ -52,11 +52,9 @@ def datasheetsfunct():
             # Confirm successful load
             print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
             # Print datasheet content
-            print(json.dumps(datasheet, indent=4))
-            
             # Display base stats
-            print("Datasheet Name:", datasheet["unit_name"])
-            print("Base Stats:")
+            print(f"\nDatasheet Name: {datasheet['unit_name']}")
+            print(f"\nBase Stats:")
             # The code snippet you provided is setting up a table using the `Texttable` library to
             # display the base stats of a datasheet. Here's a breakdown of what each line is doing:
             base_stats = Texttable()
@@ -77,10 +75,10 @@ def datasheetsfunct():
             print(base_stats.draw())
             
             # Display ranged weapons
-            print("Weapons:")
+            print(f"\nWeapons:")
             # Check if there are ranged weapons
             if "ranged" in datasheet["weapons"]:
-                print("Ranged Weapons:")
+                print(f"Ranged Weapons:")
                 # Loop through each ranged weapon
                 for i in range(1, 20):  # Assuming a maximum of 19 ranged weapons
                     key = f"ranged_{i}"
@@ -97,8 +95,7 @@ def datasheetsfunct():
                                          ["Name", weapon["name"]],
                                          ["Range", weapon["range"]],
                                          ["Attacks", weapon["attacks"]],
-                                         ["Ballistic Skill", datasheet["stats"]["ballistic_skill"]],
-                                         ["Strength", datasheet["stats"]["strength"]],
+                                         ["Ballistic Skill", weapon["ballistic_skill"]],
                                          ["Type", weapon["type"]],
                                          ["AP", weapon["ap"]],
                                          ["Damage", weapon["damage"]]])
@@ -107,10 +104,9 @@ def datasheetsfunct():
                 print("No Ranged Weapons found.")
             
             # Display melee weapons
-            print("Weapons:")
             # Check if there are melee weapons
             if "melee" in datasheet["weapons"]:
-                print("Melee Weapons:")
+                print(f"\nMelee Weapons:")
                 # Loop through each melee weapon
                 for i in range(1, 20):  # Assuming a maximum of 19 melee weapons
                     key = f"melee_{i}"
@@ -126,8 +122,8 @@ def datasheetsfunct():
                         melee.add_rows([["Name", "Value"],
                                         ["Name", weapon["name"]],
                                         ["Attacks", weapon["attacks"]],
-                                        ["Ballistic Skill", datasheet["stats"]["ballistic_skill"]],
-                                        ["Strength", datasheet["stats"]["strength"]],
+                                        ["Weapon Skill", weapon["weapon_skill"]],
+                                        ["Strength", weapon["strength"]],
                                         ["Type", weapon["type"]],
                                         ["AP", weapon["ap"]],
                                         ["Damage", weapon["damage"]]])
@@ -136,16 +132,23 @@ def datasheetsfunct():
                 print("No Melee Weapons found.")
             
             # Display abilities
-            print("Abilities:")
-            # Display core and faction abilities
-            print ("Core Abilities:", datasheet["abilities"]["core"]["name"])
-            print("Faction Ability:", datasheet["abilities"]["faction"]["name"])
+            print(f"\nAbilities:")
+            # Display core ablilities
+            if "core" in datasheet["abilities"]:
+                print (f"Core Abilities: {datasheet['abilities']['core']['name']}")
+            else:
+                print("No Core Abilities found.")
+            # Display faction ability
+            if "faction" in datasheet["abilities"]:
+                print(f"\nFaction Ability: {datasheet['abilities']['faction']['name']}")
+            else:
+                print("No Faction Ability found.")
             # Display datasheet ability
             if "datasheet" in datasheet["abilities"]:
-                print("Datasheet ability:")
+                print(f"\nDatasheet ability:")
                 # Loop through each datasheet ablility
                 for i in range(1, 20):  # Assuming a maximum of 19 datasheet abilities
-                    key = f"datasheet_ablility_{i}"
+                    key = f"datasheet_ability_{i}"
                     # If the weapon exists, display its stats
                     if key in datasheet["abilities"]["datasheet"]:
                         # Get datasheet ability data
@@ -155,51 +158,50 @@ def datasheetsfunct():
                         datasheet_ability.set_deco(Texttable.HEADER)
                         datasheet_ability.set_cols_dtype(['t', 'a'])
                         datasheet_ability.set_cols_align(["l", "r"])
-                        datasheet_ability.add_rows([["Name", "Value"],
-                                        ["Name", ability["name"]],
-                                        ["Description", ability["description"]]])
+                        datasheet_ability.add_rows([["Name", "Description"],
+                                        [ability["name"], ability["description"]]])
                         print(datasheet_ability.draw())
             else:
                 print("No Datasheet Abilities found.")
             # Display wargear abilities
             if "wargear" in datasheet["abilities"]:
-                print("Wargear:")
+                print(f"\nWargear:")
                 for i in range(1, 20):  # Assuming a maximum of 19 wargear abilities
                     key = f"wargear_{i}"
-                    # If the weapon exists, display its stats
-                    if key in datasheet["wargear"]:
+                    # If the wargear ability exists, display its stats
+                    if key in datasheet["abilities"]["wargear"]:
                         # Get wargear data
-                        wargear_item = datasheet["wargear"][key]
+                        wargear_item = datasheet["abilities"]["wargear"][key]
                         # Set up table for wargear ability
                         wargear = Texttable()
                         wargear.set_deco(Texttable.HEADER)
                         wargear.set_cols_dtype(['t', 'a'])
                         wargear.set_cols_align(["l", "r"])
-                        wargear.add_rows([["Name", "Value"],
-                                        ["Description", wargear_item["description"]]])
+                        wargear.add_rows([["Name", "Description"],
+                                        [wargear_item["name"], wargear_item["description"]]])
                         print(wargear.draw())
             else:
                 print("No Wargear Abilities found.")
             
             # Display wargear options
             if "wargear_options" in datasheet:
-                print("Wargear Options:")
-                print(*datasheet["wargear_options"], sep =',/n')
+                print(f"\nWargear Options:")
+                print(*datasheet["wargear_options"], sep =',\n')
             else:
                 print("No Wargear Options found.")
             
             # Display unit composition
-            print("Unit Composition:")
-            print(*datasheet["unit_composition"], sep =',/n')
+            print(f"\nUnit Composition:")
+            print(*datasheet["unit_composition"], sep =',\n')
             
             # Display keywords
-            print("Keywords:")
-            print(*datasheet["keywords"]["keywords"], sep =',/n')
+            print(f"\nKeywords:")
+            print(*datasheet["keywords"]["keywords"], sep =',\n')
             print("Faction Keywords:")
             print(datasheet["keywords"]["faction_keywords"])
             
             # Display lore
-            print("Lore:")
+            print(f"\nLore:")
             print(datasheet["lore"])
 
         # Error handling
