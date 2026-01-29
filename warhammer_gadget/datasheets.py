@@ -53,7 +53,7 @@ def datasheetsfunct():
             print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
             # Print datasheet content
             print(json.dumps(datasheet, indent=4))
-            """
+            
             # Display base stats
             print("Datasheet Name:", datasheet["unit_name"])
             print("Base Stats:")
@@ -201,7 +201,8 @@ def datasheetsfunct():
             # Display lore
             print("Lore:")
             print(datasheet["lore"])
-            """
+
+        # Error handling
         except json.JSONDecodeError:
             print(f"Error: '{chooseDatasheet}.json' is not a valid JSON file.")
         except Exception as e:
