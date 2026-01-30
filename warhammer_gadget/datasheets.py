@@ -71,7 +71,8 @@ def datasheetsfunct():
                                 ["Wounds", datasheet["stats"]["wounds"]],
                                 ["Leadership", datasheet["stats"]["leadership"]],
                                 ["Save", datasheet["stats"]["save"]],
-                                ["Objective Control", datasheet["stats"]["objective_control"]]])
+                                ["Objective Control", datasheet["stats"]["objective_control"]],
+                                ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
             print(base_stats.draw())
             
             # Display ranged weapons

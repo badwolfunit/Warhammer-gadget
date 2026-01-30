@@ -6,7 +6,8 @@
         "wounds": 0,
         "leadership": 0,
         "save": 0,
-        "objective_control": 0
+        "objective_control": 0,
+        "invulnerable_save": "none"
     },
     "weapons": {
         "ranged": {
