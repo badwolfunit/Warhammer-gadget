@@ -92,14 +92,26 @@ def datasheetsfunct():
                         ranged.set_deco(Texttable.HEADER)
                         ranged.set_cols_dtype(['t', 'a'])
                         ranged.set_cols_align(["l", "r"])
-                        ranged.add_rows([["Name", "Value"],
-                                         ["Name", weapon["name"]],
-                                         ["Range", weapon["range"]],
-                                         ["Attacks", weapon["attacks"]],
-                                         ["Ballistic Skill", str(weapon["ballistic_skill"]) + "+"],
-                                         ["Type", weapon["type"]],
-                                         ["AP", "-"+str(weapon["ap"])],
-                                         ["Damage", weapon["damage"]]])
+                        if weapon["ballistic_skill"] is not None:
+                            ranged.add_rows([["Name", "Value"],
+                                             ["Name", weapon["name"]],
+                                             ["Range", weapon["range"]],
+                                             ["Attacks", weapon["attacks"]],
+                                             ["Ballistic Skill", str(weapon["ballistic_skill"]) + "+"],
+                                             ["Strength", weapon["strength"]],
+                                             ["Type", ", ".join(weapon["type"])],
+                                             ["AP", "-"+str(weapon["ap"])],
+                                             ["Damage", weapon["damage"]]])
+                        else:
+                            ranged.add_rows([["Name", "Value"],
+                                             ["Name", weapon["name"]],
+                                             ["Range", weapon["range"]],
+                                             ["Attacks", weapon["attacks"]],
+                                             ["Ballistic Skill", "N/A"],
+                                             ["Strength", weapon["strength"]],
+                                             ["Type", ", ".join(weapon["type"])],
+                                             ["AP", "-"+str(weapon["ap"])],
+                                             ["Damage", weapon["damage"]]])
                         print(ranged.draw())
             else:
                 print("No Ranged Weapons found.")
@@ -125,7 +137,7 @@ def datasheetsfunct():
                                         ["Attacks", weapon["attacks"]],
                                         ["Weapon Skill", str(weapon["weapon_skill"]) + "+"],
                                         ["Strength", weapon["strength"]],
-                                        ["Type", weapon["type"]],
+                                        ["Type", ", ".join(weapon["type"])],
                                         ["AP", "-"+str(weapon["ap"])],
                                         ["Damage", weapon["damage"]]])
                         print(melee.draw())
@@ -159,8 +171,8 @@ def datasheetsfunct():
                         datasheet_ability.set_deco(Texttable.HEADER)
                         datasheet_ability.set_cols_dtype(['t', 'a'])
                         datasheet_ability.set_cols_align(["l", "r"])
-                        datasheet_ability.add_rows([["Name", "Description"],
-                                        [ability["name"], ability["description"]]])
+                        datasheet_ability.add_rows([["Name",          "Description"],
+                                                    [ability["name"], ability["description"]]])
                         print(datasheet_ability.draw())
             else:
                 print("No Datasheet Abilities found.")
@@ -178,8 +190,8 @@ def datasheetsfunct():
                         wargear.set_deco(Texttable.HEADER)
                         wargear.set_cols_dtype(['t', 'a'])
                         wargear.set_cols_align(["l", "r"])
-                        wargear.add_rows([["Name", "Description"],
-                                        [wargear_item["name"], wargear_item["description"]]])
+                        wargear.add_rows([["Name",               "Description"],
+                                          [wargear_item["name"], wargear_item["description"]]])
                         print(wargear.draw())
             else:
                 print("No Wargear Abilities found.")
