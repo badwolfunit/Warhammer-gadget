@@ -69,8 +69,8 @@ def datasheetsfunct():
                                 ["Movement", datasheet["stats"]["movement"]],
                                 ["Toughness", datasheet["stats"]["toughness"]],
                                 ["Wounds", datasheet["stats"]["wounds"]],
-                                ["Leadership", datasheet["stats"]["leadership"]],
-                                ["Save", datasheet["stats"]["save"]],
+                                ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
+                                ["Save", str(datasheet["stats"]["save"])+"+"],
                                 ["Objective Control", datasheet["stats"]["objective_control"]],
                                 ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
             print(base_stats.draw())
@@ -96,9 +96,9 @@ def datasheetsfunct():
                                          ["Name", weapon["name"]],
                                          ["Range", weapon["range"]],
                                          ["Attacks", weapon["attacks"]],
-                                         ["Ballistic Skill", weapon["ballistic_skill"]],
+                                         ["Ballistic Skill", str(weapon["ballistic_skill"]) + "+"],
                                          ["Type", weapon["type"]],
-                                         ["AP", weapon["ap"]],
+                                         ["AP", "-"+str(weapon["ap"])],
                                          ["Damage", weapon["damage"]]])
                         print(ranged.draw())
             else:
@@ -123,10 +123,10 @@ def datasheetsfunct():
                         melee.add_rows([["Name", "Value"],
                                         ["Name", weapon["name"]],
                                         ["Attacks", weapon["attacks"]],
-                                        ["Weapon Skill", weapon["weapon_skill"]],
+                                        ["Weapon Skill", str(weapon["weapon_skill"]) + "+"],
                                         ["Strength", weapon["strength"]],
                                         ["Type", weapon["type"]],
-                                        ["AP", weapon["ap"]],
+                                        ["AP", "-"+str(weapon["ap"])],
                                         ["Damage", weapon["damage"]]])
                         print(melee.draw())
             else:

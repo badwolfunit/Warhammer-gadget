@@ -18,7 +18,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             "ranged_2": {
@@ -28,7 +28,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             "ranged_3": {
@@ -38,7 +38,7 @@
                 "ballistic_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             }
         },
@@ -49,7 +49,7 @@
                 "weapon_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             },
             "melee_2": {
@@ -58,7 +58,7 @@
                 "weapon_skill": 0,
                 "strength": 0,
                 "type": "type",
-                "ap": -0,
+                "ap": 0,
                 "damage": 0
             }
         }
