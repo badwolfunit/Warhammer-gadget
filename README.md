@@ -27,6 +27,9 @@ use left right up down and ok button interface
 so far just building it as a TUI terminal application for PC. Will try to work out how to expand it to the main idea. (once python version is finished, make C/C++/C# version???)
 is slightly more designed for warhammer 40k
 
+## Confession
+I have used AI to clear up the code and to help with debugging as I am still a noob but I made sure to search up everything that it did to understand it better so i wouldn't have to use it the next time.
+
 # Legal stuff
 ## Disclaimer
 
