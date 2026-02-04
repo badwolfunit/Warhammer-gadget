@@ -60,7 +60,7 @@ Issues = "https://github.com/badwolfunit/Warhammer-gadget/issues"
 # where: Specifies the root directory where setuptools should search for packages
 #        In this case, it will look for packages within the "warhammer_gadget" directory
 [tool.setuptools.packages.find]
-where = ["warhammer_gadget"]
+where = ["."]
 
 # Defines a command-line entry point for the warhammer-gadget application.
 # When installed, creates an executable script named 'warhammer-gadget' that
