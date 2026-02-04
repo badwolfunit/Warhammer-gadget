@@ -66,7 +66,7 @@ def datasheetsfunct():
             base_stats.set_cols_dtype(['t', 'a'])
             base_stats.set_cols_align(["l", "r"])
             base_stats.add_rows([["Name", "Value"],
-                                ["Movement", datasheet["stats"]["movement"]],
+                                ["Movement", str(datasheet["stats"]["movement"])+'"'],
                                 ["Toughness", datasheet["stats"]["toughness"]],
                                 ["Wounds", datasheet["stats"]["wounds"]],
                                 ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
@@ -95,7 +95,7 @@ def datasheetsfunct():
                         if weapon["ballistic_skill"] is not None:
                             ranged.add_rows([["Name", "Value"],
                                              ["Name", weapon["name"]],
-                                             ["Range", weapon["range"]],
+                                             ["Range", str(weapon["range"])+'"'],
                                              ["Attacks", weapon["attacks"]],
                                              ["Ballistic Skill", str(weapon["ballistic_skill"]) + "+"],
                                              ["Strength", weapon["strength"]],
@@ -105,7 +105,7 @@ def datasheetsfunct():
                         else:
                             ranged.add_rows([["Name", "Value"],
                                              ["Name", weapon["name"]],
-                                             ["Range", weapon["range"]],
+                                             ["Range", str(weapon["range"])+'"'],
                                              ["Attacks", weapon["attacks"]],
                                              ["Ballistic Skill", "N/A"],
                                              ["Strength", weapon["strength"]],
@@ -206,6 +206,17 @@ def datasheetsfunct():
             # Display unit composition
             print(f"\nUnit Composition:")
             print(*datasheet["unit_composition"], sep =',\n')
+            
+            # Display transport rules if they exist
+            if "transport" in datasheet:
+                print(f"\nTransport Rules:")
+                print(*datasheet["transport"], sep =',\n')
+                
+            # Display damaged characteristics if they exist
+            if "damaged" in datasheet:
+                print(f"\nDamaged Characteristics:")
+                print(f"Damaged Range: {datasheet['damaged']['damaged_']}")
+                print(f"Damaged Rule: {datasheet['damaged']['damaged_rule']}")
             
             # Display keywords
             print(f"\nKeywords:")
