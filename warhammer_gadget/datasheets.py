@@ -235,6 +235,6 @@ def datasheetsfunct():
             print(f"Error loading datasheet: {e}")
     else:
         # Handle case where datasheet does not exist
-        print(f"Datasheet '{chooseDatasheet}' not found. Check spelling and existance.")
+        print(f"Datasheet '{chooseDatasheet}' not found. Check spelling and existence.")
         datasheetsfunct()
 
