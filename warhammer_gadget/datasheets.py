@@ -55,13 +55,8 @@ def datasheetsfunct():
             # Display base stats
             print(f"\nDatasheet Name: {datasheet['unit_name']}")
             print(f"\nBase Stats:")
-            # The code snippet you provided is setting up a table using the `Texttable` library to
-            # display the base stats of a datasheet. Here's a breakdown of what each line is doing:
+            # Loads base stats into a table
             base_stats = Texttable()
-            # `base_stats = Texttable()` is initializing an instance of the `Texttable` class, which
-            # is used to create and format text-based tables. This line of code creates a new table
-            # object named `base_stats` that will be used to display the base stats of a datasheet in
-            # a structured and visually appealing way.
             base_stats.set_deco(Texttable.HEADER)
             base_stats.set_cols_dtype(['t', 'a'])
             base_stats.set_cols_align(["l", "r"])
