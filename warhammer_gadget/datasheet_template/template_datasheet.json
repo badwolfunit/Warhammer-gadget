@@ -109,7 +109,7 @@
         "Transport rules"
     ],
     "damaged": {
-        "damaged_": "Damaged range",
+        "damage_range": "Damaged range",
         "damaged_rule": "Damaged debuffs"
     },
     "keywords": {
