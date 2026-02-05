@@ -40,7 +40,8 @@ def datasheetsfunct():
         
     print(datasheet_files)
     # Get user input for which datasheet to load
-    chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension): ")
+    chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension). For raw JSON suffix the filename with \" RAW\". Note the space in front of RAW:")
+    
     # Create full path to datasheet
     datasheetPath = datasheets_dir / f"{chooseDatasheet}.json"
     
