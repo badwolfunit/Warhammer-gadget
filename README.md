@@ -11,7 +11,7 @@ This software is designed to help you play Warhammer using digital features. It 
 
 So far I have implemented the following:
 * a dice rolling function
-* a datasheet viewer (datasheets are writen by user in JSON; see guide [here] (https://github.com/badwolfunit/Warhammer-gadget/wiki/Datasheet-Creation). They are also displayed in JSON. One of my short term goals is to make the datasheets easier to be read by humans)
+* a datasheet viewer (datasheets are writen by user in JSON; see guide [here](https://github.com/badwolfunit/Warhammer-gadget/wiki/Datasheet-Creation). They are also displayed in JSON. One of my short term goals is to make the datasheets easier to be read by humans)
   
 ## Plans for future
 will end up building it as a small device around the size of a paperback book (or smaller) which can display datasheets (check copywrite laws) with a built-in tape measure, and a laser pointer to check line of sight
@@ -26,6 +26,9 @@ use left right up down and ok button interface
 
 so far just building it as a TUI terminal application for PC. Will try to work out how to expand it to the main idea. (once python version is finished, make C/C++/C# version???)
 is slightly more designed for warhammer 40k
+
+## Confession
+I have used AI to clear up the code and to help with debugging as I am still a noob but I made sure to search up everything that it did to understand it better so i wouldn't have to use it the next time.
 
 # Legal stuff
 ## Disclaimer
