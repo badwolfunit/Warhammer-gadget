@@ -142,7 +142,7 @@ def datasheetsfunct():
             
             # Display abilities
             print(f"\nAbilities:")
-            # Display core ablilities
+            # Display core abilities
             if "core" in datasheet["abilities"]:
                 print (f"Core Abilities: {datasheet['abilities']['core']['name']}")
             else:
