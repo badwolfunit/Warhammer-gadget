@@ -144,7 +144,7 @@ def datasheetsfunct():
             print(f"\nAbilities:")
             # Display core abilities
             if "core" in datasheet["abilities"]:
-                print (f"Core Abilities: {datasheet['abilities']['core']['name']}")
+                print(f"Core Abilities: {datasheet['abilities']['core']['name']}")
             else:
                 print("No Core Abilities found.")
             # Display faction ability
