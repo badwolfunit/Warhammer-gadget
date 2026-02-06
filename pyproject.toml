@@ -39,7 +39,7 @@ build-backend = "setuptools.build_meta"
 # - dependencies: A list of required packages for the project, specifying version constraints.
 [project]
 name = "warhammer-gadget"
-version = "0.0.1"
+version = "0.0.1alpha"
 description = "Compact Warhammer toolbox with datasheets, dice rolling, and TUI interface"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
