@@ -18,8 +18,8 @@
 
 # This is a load of shite by the way. I can barely code this is a mix of copy pasting from stack overflow, Geeks for Geeks, W3 schools, AI autocorrect and blind luck. This is literally my first proper python project. Feel free to contribute with improvements and cleanups.
 
-from rollingdice import rollingDicefunct# pyright: ignore[reportMissingImports]
-from datasheets import datasheetsfunct# pyright: ignore[reportMissingImports]
+from .rollingdice import rollingDicefunct
+from .datasheets import datasheetsfunct
 
 def licenseInfo():
     """Prints license and copyright information."""
@@ -29,6 +29,7 @@ def licenseInfo():
 
 def main():
     """Main entry point - prompts user to select dice rolling or datasheet viewing."""
+    licenseInfo()
     # Asks user what function they want to use
     print ("select Function")
     print ("(D)ice or data(S)heets")
@@ -38,15 +39,16 @@ def main():
     # Activated function based on user input
     if diceOrDataSheet in ("D", "d"):
         # Activate dice rolling function
-        rollingdice.rollingDicefunct()
+        rollingDicefunct()
         
     elif diceOrDataSheet in ("S", "s"):
         # Activate datasheet function
-        datasheets.datasheetsfunct()
+        datasheetsfunct()
     else:
         # Invalid input handler
         print("Invalid input, please try again")
         main()
 
-licenseInfo()
-main()
+if __name__ == "__main__":
+    licenseInfo()
+    main()

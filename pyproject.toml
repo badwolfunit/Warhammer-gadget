@@ -39,19 +39,26 @@ build-backend = "setuptools.build_meta"
 # - dependencies: A list of required packages for the project, specifying version constraints.
 [project]
 name = "warhammer-gadget"
-version = "0.0.1"
+version = "0.0.1alpha"
 description = "Compact Warhammer toolbox with datasheets, dice rolling, and TUI interface"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 authors = [{name = "Badwolfunit", email = "badwolfunit@icloud.com"}]
 dependencies = [
-    "dice>=4.0.0"
+    "dice>=4.0.0",
     "texttable>=1.7.0"
 ]
 
+[project.urls]
+Homepage = "https://github.com/badwolfunit/Warhammer-gadget"
+Issues = "https://github.com/badwolfunit/Warhammer-gadget/issues"
+
+
+[tool.setuptools]
+
 # Configures setuptools to automatically discover Python packages
 # where: Specifies the root directory where setuptools should search for packages
-#        In this case, it will look for packages within the "Warhammer-gadget" directory
+#        In this case, it will look for packages within the "warhammer_gadget" directory
 [tool.setuptools.packages.find]
 where = ["."]
 

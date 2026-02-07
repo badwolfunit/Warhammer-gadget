@@ -1,82 +1,96 @@
- {
+{
     "unit_name": "name",
     "stats": {
         "movement": 0,
-        "strength": 0,
         "toughness": 0,
         "wounds": 0,
         "leadership": 0,
         "save": 0,
-        "objective_control": 0
+        "objective_control": 0,
+        "invulnerable_save": "none"
     },
     "weapons": {
-        "ranged": [
-            {
+        "ranged": {
+            "ranged_1": {
                 "name": "name",
                 "range": 0,
                 "attacks": 0,
                 "ballistic_skill": 0,
                 "strength": 0,
-                "type": "type",
-                "ap": -0,
+                "type": ["Ranged", "type"],
+                "ap": 0,
                 "damage": 0
             },
-            {
+            "ranged_2": {
                 "name": "name",
                 "range": 0,
                 "attacks": 0,
                 "ballistic_skill": 0,
                 "strength": 0,
-                "type": "type",
-                "ap": -0,
+                "type": ["Ranged", "type"],
+                "ap": 0,
                 "damage": 0
             },
-            {
+            "ranged_3": {
                 "name": "name",
                 "range": 0,
                 "attacks": 0,
                 "ballistic_skill": 0,
                 "strength": 0,
-                "type": "type",
-                "ap": -0,
+                "type": ["Ranged", "type"],
+                "ap": 0,
                 "damage": 0
             }
-        ],
-        "melee": [
-            {
+        },
+        "melee": {
+            "melee_1": {
                 "name": "name",
                 "attacks": 0,
                 "weapon_skill": 0,
                 "strength": 0,
-                "ap": -0,
+                "type": ["Melee", "type"],
+                "ap": 0,
                 "damage": 0
             },
-            {
+            "melee_2": {
                 "name": "name",
                 "attacks": 0,
                 "weapon_skill": 0,
                 "strength": 0,
-                "ap": -0,
+                "type": ["Melee", "type"],
+                "ap": 0,
                 "damage": 0
             }
-        ]
+        }
     },
     "abilities": {
+        "core": {
+            "name": "name"
+        },
         "faction": {
             "name": "name"
         },
-        "datasheet": [
-    {
-      "name": "name",
-      "description": "description"
-    }
-  ],
-  "wargear": [
-    {
-      "name": "name",
-      "description": "description"
-    }
-  ],
+        "datasheet": {
+            "datasheet_ability_1": {
+                "name": "name",
+                "description": "description"
+            },
+            "datasheet_ability_2": {
+                "name": "name",
+                "description": "description"
+            }
+        },
+        "wargear": {
+            "wargear_1":{
+                "name": "name",
+                "description": "description"
+            },
+            "wargear_2":{
+                "name": "name",
+                "description": "description"
+            }
+        }
+    },
     "wargear_options": [
         "wargear option 1",
         "wargear option 2",
@@ -91,18 +105,26 @@
         "Point cost line 2",
         "Base Size: Base Size"
     ],
-"keywords": {
-    "keywords":[
+    "transport": [
+        "Transport rules"
+    ],
+    "damaged": {
+        "damage_range": "Damaged range",
+        "damaged_rule": "Damaged debuffs"
+    },
+    "leader": {
+        "leader": false
+    },
+    "keywords": {
+        "keywords":[
         "keywords",
         "keywords",
         "keywords",
         "keywords",
         "keywords",
         "keywords"
-    ],
-    "faction_keywords": "faction keywords"
-},
-        "lore": "lore text"
-        }
-    }
-
+        ],
+        "faction_keywords": "faction keywords"
+    },
+    "lore": "lore text"
+}
