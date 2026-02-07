@@ -217,7 +217,11 @@ def datasheetsfunct():
                     print(f"\nDamaged Characteristics:")
                     print(f"Damaged Range: {datasheet['damaged']['damage_range']}")
                     print(f"Damaged Rule: {datasheet['damaged']['damaged_rule']}")
-            
+
+                # Display leader rules if they exist
+                if "leader" in datasheet:
+                    print(f"\nLeader:")
+                    print(datasheet["leader"]["leader"])
                 # Display keywords
                 print(f"\nKeywords:")
                 print(*datasheet["keywords"]["keywords"], sep =',\n')

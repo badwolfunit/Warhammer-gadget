@@ -112,6 +112,9 @@
         "damage_range": "Damaged range",
         "damaged_rule": "Damaged debuffs"
     },
+    "leader": {
+        "leader": false
+    },
     "keywords": {
         "keywords":[
         "keywords",
