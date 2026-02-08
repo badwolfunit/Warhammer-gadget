@@ -70,14 +70,24 @@ def datasheetsfunct():
                 base_stats.set_deco(Texttable.HEADER)
                 base_stats.set_cols_dtype(['t', 'a'])
                 base_stats.set_cols_align(["l", "r"])
-                base_stats.add_rows([["Name", "Value"],
-                                     ["Movement", str(datasheet["stats"]["movement"])+'"'],
-                                     ["Toughness", datasheet["stats"]["toughness"]],
-                                     ["Wounds", datasheet["stats"]["wounds"]],
-                                     ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
-                                     ["Save", str(datasheet["stats"]["save"])+"+"],
-                                     ["Objective Control", datasheet["stats"]["objective_control"]],
-                                     ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
+                if datasheet["stats"]["invulnerable_save"] is not None:
+                    base_stats.add_rows([["Name", "Value"],
+                                         ["Movement", str(datasheet["stats"]["movement"])+'"'],
+                                         ["Toughness", datasheet["stats"]["toughness"]],
+                                         ["Wounds", datasheet["stats"]["wounds"]],
+                                         ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
+                                         ["Save", str(datasheet["stats"]["save"])+"+"],
+                                         ["Objective Control", datasheet["stats"]["objective_control"]],
+                                         ["Invulnerable Save", str(datasheet["stats"]["invulnerable_save"])+"+"]])
+                else:
+                    base_stats.add_rows([["Name", "Value"],
+                                         ["Movement", str(datasheet["stats"]["movement"])+'"'],
+                                         ["Toughness", datasheet["stats"]["toughness"]],
+                                         ["Wounds", datasheet["stats"]["wounds"]],
+                                         ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
+                                         ["Save", str(datasheet["stats"]["save"])+"+"],
+                                         ["Objective Control", datasheet["stats"]["objective_control"]],
+                                         ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
                 print(base_stats.draw())
             
                 # Display ranged weapons
