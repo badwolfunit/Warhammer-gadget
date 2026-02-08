@@ -164,7 +164,7 @@ def datasheetsfunct():
                 # Display datasheet ability
                 if "datasheet" in datasheet["abilities"]:
                     print(f"\nDatasheet ability:")
-                    # Loop through each datasheet ablility
+                    # Loop through each datasheet ability
                     for i in range(1, 20):  # Assuming a maximum of 19 datasheet abilities
                         key = f"datasheet_ability_{i}"
                         # If the ability exists, display its details
