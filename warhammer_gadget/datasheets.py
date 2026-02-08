@@ -43,6 +43,11 @@ def datasheetsfunct():
     chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension). For raw JSON suffix the filename with \" RAW\". Note the space in front of RAW:")
     # Prepare the string for later steps
     checkDatasheet = chooseDatasheet.split()
+    # Handle empty or whitespace-only input safely
+    if not checkDatasheet:
+        print("No datasheet name entered. Please enter a valid datasheet name.")
+        datasheetsfunct()
+        return
     # Create full path to datasheet
     datasheetPath = datasheets_dir / f"{checkDatasheet[0]}.json"
     
