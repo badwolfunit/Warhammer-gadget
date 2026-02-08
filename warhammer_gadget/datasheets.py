@@ -234,8 +234,11 @@ def datasheetsfunct():
                 print(datasheet["keywords"]["faction_keywords"])
             
                 # Display lore
-                print(f"\nLore:")
-                print(datasheet["lore"])
+                if "lore" in datasheet:
+                    print(f"\nLore:")
+                    print(datasheet["lore"])
+                else:
+                    print("No Lore found.")
 
             # Error handling
         except json.JSONDecodeError:
