@@ -7,7 +7,7 @@
         "leadership": 0,
         "save": 0,
         "objective_control": 0,
-        "invulnerable_save": "none"
+        "invulnerable_save": null
     },
     "weapons": {
         "ranged": {
