@@ -64,9 +64,9 @@
         }
     },
     "abilities": {
-        "core": {
-            "name": "name"
-        },
+        "core": [
+            "name"
+        ],
         "faction": {
             "name": "name"
         },
