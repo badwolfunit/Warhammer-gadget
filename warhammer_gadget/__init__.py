@@ -37,13 +37,13 @@ def get_config_dir():
         else:
             # Fallback to the standard roaming AppData location under the user's home directory
             base_dir = Path.home() / "AppData" / "Roaming"
-        CONFIG_DIR = base_dir / "WarhammerGadget" / "Datasheets"
+        config_dir = base_dir / "WarhammerGadget" / "Datasheets"
     elif os.name == "posix":
         # Set config directory path for datasheets (macOS and Linux)
-        CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+        config_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
     else:
         raise RuntimeError(f"Unsupported operating system: {os.name}")
-    return CONFIG_DIR
+    return config_dir
 
 def ensure_config_dir():
     """Create a user config directory for datasheets if it doesn't exist.
