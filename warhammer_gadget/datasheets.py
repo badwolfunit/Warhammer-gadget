@@ -43,6 +43,11 @@ def datasheetsfunct():
     chooseDatasheet: str = input("Enter the name of the datasheet you want to load (without .json extension). For raw JSON suffix the filename with \" RAW\". Note the space in front of RAW:")
     # Prepare the string for later steps
     checkDatasheet = chooseDatasheet.split()
+    # Handle empty or whitespace-only input safely
+    if not checkDatasheet:
+        print("No datasheet name entered. Please enter a valid datasheet name.")
+        datasheetsfunct()
+        return
     # Create full path to datasheet
     datasheetPath = datasheets_dir / f"{checkDatasheet[0]}.json"
     
@@ -65,14 +70,24 @@ def datasheetsfunct():
                 base_stats.set_deco(Texttable.HEADER)
                 base_stats.set_cols_dtype(['t', 'a'])
                 base_stats.set_cols_align(["l", "r"])
-                base_stats.add_rows([["Name", "Value"],
-                                     ["Movement", str(datasheet["stats"]["movement"])+'"'],
-                                     ["Toughness", datasheet["stats"]["toughness"]],
-                                     ["Wounds", datasheet["stats"]["wounds"]],
-                                     ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
-                                     ["Save", str(datasheet["stats"]["save"])+"+"],
-                                     ["Objective Control", datasheet["stats"]["objective_control"]],
-                                     ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
+                if datasheet["stats"]["invulnerable_save"] is not None:
+                    base_stats.add_rows([["Name", "Value"],
+                                         ["Movement", str(datasheet["stats"]["movement"])+'"'],
+                                         ["Toughness", datasheet["stats"]["toughness"]],
+                                         ["Wounds", datasheet["stats"]["wounds"]],
+                                         ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
+                                         ["Save", str(datasheet["stats"]["save"])+"+"],
+                                         ["Objective Control", datasheet["stats"]["objective_control"]],
+                                         ["Invulnerable Save", str(datasheet["stats"]["invulnerable_save"])+"+"]])
+                else:
+                    base_stats.add_rows([["Name", "Value"],
+                                         ["Movement", str(datasheet["stats"]["movement"])+'"'],
+                                         ["Toughness", datasheet["stats"]["toughness"]],
+                                         ["Wounds", datasheet["stats"]["wounds"]],
+                                         ["Leadership", str(datasheet["stats"]["leadership"])+"+"],
+                                         ["Save", str(datasheet["stats"]["save"])+"+"],
+                                         ["Objective Control", datasheet["stats"]["objective_control"]],
+                                         ["Invulnerable Save", datasheet["stats"]["invulnerable_save"]]])
                 print(base_stats.draw())
             
                 # Display ranged weapons
@@ -148,7 +163,8 @@ def datasheetsfunct():
                 print(f"\nAbilities:")
                 # Display core abilities
                 if "core" in datasheet["abilities"]:
-                    print(f"Core Abilities: {datasheet['abilities']['core']['name']}")
+                    print(f"Core Abilities:")
+                    print(*datasheet['abilities']['core'], sep=', ')
                 else:
                     print("No Core Abilities found.")
                 # Display faction ability
@@ -159,7 +175,7 @@ def datasheetsfunct():
                 # Display datasheet ability
                 if "datasheet" in datasheet["abilities"]:
                     print(f"\nDatasheet ability:")
-                    # Loop through each datasheet ablility
+                    # Loop through each datasheet ability
                     for i in range(1, 20):  # Assuming a maximum of 19 datasheet abilities
                         key = f"datasheet_ability_{i}"
                         # If the ability exists, display its details
@@ -229,8 +245,11 @@ def datasheetsfunct():
                 print(datasheet["keywords"]["faction_keywords"])
             
                 # Display lore
-                print(f"\nLore:")
-                print(datasheet["lore"])
+                if "lore" in datasheet:
+                    print(f"\nLore:")
+                    print(datasheet["lore"])
+                else:
+                    print("No Lore found.")
 
             # Error handling
         except json.JSONDecodeError:
