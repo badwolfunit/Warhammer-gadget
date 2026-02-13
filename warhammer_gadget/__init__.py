@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/
 
+import os
 from pathlib import Path
 
 
@@ -28,8 +29,13 @@ def ensure_config_dir():
     Returns:
         Path: The path to the config directory
     """
-    # Create config directory for datasheets
-    CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    if os.name == "nt":
+        # Set config directory path for datasheets (Windows)
+        CONFIG_DIR = Path(os.getenv("APPDATA")) / "WarhammerGadget" / "Datasheets"
+    elif os.name == "posix":
+        # Set config directory path for datasheets (macOS and Linux)
+        CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    # Create the config directory if it doesn't exist
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     return CONFIG_DIR
 
