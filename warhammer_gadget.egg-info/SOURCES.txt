@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+warhammer_gadget/__init__.py
+warhammer_gadget/datasheets.py
+warhammer_gadget/main.py
+warhammer_gadget/rollingdice.py
+warhammer_gadget.egg-info/PKG-INFO
+warhammer_gadget.egg-info/SOURCES.txt
+warhammer_gadget.egg-info/dependency_links.txt
+warhammer_gadget.egg-info/entry_points.txt
+warhammer_gadget.egg-info/requires.txt
+warhammer_gadget.egg-info/top_level.txt

@@ -20,23 +20,13 @@ import json
 import os
 from pathlib import Path
 from texttable import Texttable
+from . import ensure_config_dir
 
 
 def datasheetsfunct():
     # Lists available datasheets and allows user to select one to load
     print("Here are the available datasheets:")
-    if os.name == "nt":
-        # Set config directory path for datasheets (Windows)
-        appdata = os.getenv("APPDATA")
-        if appdata is None:
-            print("APPDATA environment variable is not set. Cannot locate datasheets directory on Windows.")
-            return
-        datasheets_dir = Path(appdata) / "WarhammerGadget" / "Datasheets"
-    elif os.name == "posix":
-        # Set config directory path for datasheets (macOS and Linux)
-        datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
-    else:
-        raise RuntimeError(f"Unsupported operating system: {os.name}")
+    datasheets_dir = ensure_config_dir()
     
     # Check if directory exists
     if not datasheets_dir.exists():
