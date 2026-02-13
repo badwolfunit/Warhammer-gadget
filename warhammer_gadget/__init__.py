@@ -41,6 +41,8 @@ def ensure_config_dir():
     elif os.name == "posix":
         # Set config directory path for datasheets (macOS and Linux)
         CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    else:
+        raise RuntimeError(f"Unsupported operating system: {os.name}")
     # Create the config directory if it doesn't exist
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     return CONFIG_DIR
