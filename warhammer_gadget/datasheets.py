@@ -25,17 +25,24 @@ from texttable import Texttable
 def datasheetsfunct():
     # Lists available datasheets and allows user to select one to load
     print("Here are the available datasheets:")
-    datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    if os.name == "nt":
+        # Set config directory path for datasheets (Windows)
+        datasheets_dir = Path(os.getenv("APPDATA")) / "WarhammerGadget" / "Datasheets"
+    elif os.name == "posix":
+        # Set config directory path for datasheets (macOS and Linux)
+        datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    else:
+        raise RuntimeError(f"Unsupported operating system: {os.name}")
     
     # Check if directory exists
     if not datasheets_dir.exists():
-        print("No datasheets directory found. Please add datasheets to ~/.config/warhammer-gadget/datasheets/")
+        print(f"No datasheets directory found. Please add datasheets to {datasheets_dir}")
         return
     
     datasheet_files = [f for f in os.listdir(datasheets_dir) if f.endswith('.json')]
     
     if not datasheet_files:
-        print("No datasheets found. Please add JSON files to ~/.config/warhammer-gadget/datasheets/")
+        print(f"No datasheets found. Please add JSON files to {datasheets_dir}")
         return
         
     print(datasheet_files)
