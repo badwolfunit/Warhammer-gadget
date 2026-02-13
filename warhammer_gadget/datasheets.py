@@ -27,7 +27,11 @@ def datasheetsfunct():
     print("Here are the available datasheets:")
     if os.name == "nt":
         # Set config directory path for datasheets (Windows)
-        datasheets_dir = Path(os.getenv("APPDATA")) / "WarhammerGadget" / "Datasheets"
+        appdata = os.getenv("APPDATA")
+        if appdata is None:
+            print("APPDATA environment variable is not set. Cannot locate datasheets directory on Windows.")
+            return
+        datasheets_dir = Path(appdata) / "WarhammerGadget" / "Datasheets"
     elif os.name == "posix":
         # Set config directory path for datasheets (macOS and Linux)
         datasheets_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
