@@ -28,11 +28,6 @@ def datasheetsfunct():
     print("Here are the available datasheets:")
     datasheets_dir = ensure_config_dir()
     
-    # Check if directory exists
-    if not datasheets_dir.exists():
-        print(f"No datasheets directory found. Please add datasheets to {datasheets_dir}")
-        return
-    
     datasheet_files = [f for f in os.listdir(datasheets_dir) if f.endswith('.json')]
     
     if not datasheet_files:
