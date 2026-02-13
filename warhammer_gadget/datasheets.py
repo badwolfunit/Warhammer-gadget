@@ -18,7 +18,6 @@
 
 import json
 import os
-from pathlib import Path
 from texttable import Texttable
 from . import get_config_dir
 
