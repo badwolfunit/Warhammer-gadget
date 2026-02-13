@@ -23,8 +23,8 @@ from pathlib import Path
 # Create a user config directory for datasheets.
 # This is intentionally created on import so users have a known location
 # to drop their JSON files.
-def ensure_config_dir():
-    """Create a user config directory for datasheets if it doesn't exist.
+def get_config_dir():
+    """Get the path to the config directory for datasheets.
     
     Returns:
         Path: The path to the config directory
@@ -43,10 +43,19 @@ def ensure_config_dir():
         CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
     else:
         raise RuntimeError(f"Unsupported operating system: {os.name}")
-    # Create the config directory if it doesn't exist
-    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     return CONFIG_DIR
 
-# Call the function
+def ensure_config_dir():
+    """Create a user config directory for datasheets if it doesn't exist.
+    
+    Returns:
+        Path: The path to the config directory
+    """
+    config_dir = get_config_dir()
+    # Create the config directory if it doesn't exist
+    config_dir.mkdir(parents=True, exist_ok=True)
+    return config_dir
+
+# Call the function to create the directory on import
 ensure_config_dir()
-__all__ = ["ensure_config_dir"]
+__all__ = ["get_config_dir", "ensure_config_dir"]
