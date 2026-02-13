@@ -14,25 +14,48 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import os
 from pathlib import Path
 
 
 # Create a user config directory for datasheets.
 # This is intentionally created on import so users have a known location
 # to drop their JSON files.
+def get_config_dir():
+    """Get the path to the config directory for datasheets.
+    
+    Returns:
+        Path: The path to the config directory
+    """
+    if os.name == "nt":
+        # Set config directory path for datasheets (Windows)
+        appdata = os.getenv("APPDATA")
+        if appdata is not None:
+            base_dir = Path(appdata)
+        else:
+            # Fallback to the standard roaming AppData location under the user's home directory
+            base_dir = Path.home() / "AppData" / "Roaming"
+        config_dir = base_dir / "WarhammerGadget" / "Datasheets"
+    elif os.name == "posix":
+        # Set config directory path for datasheets (macOS and Linux)
+        config_dir = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
+    else:
+        raise RuntimeError(f"Unsupported operating system: {os.name}")
+    return config_dir
+
 def ensure_config_dir():
     """Create a user config directory for datasheets if it doesn't exist.
     
     Returns:
         Path: The path to the config directory
     """
-    # Create config directory for datasheets
-    CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
-    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-    return CONFIG_DIR
+    config_dir = get_config_dir()
+    # Create the config directory if it doesn't exist
+    config_dir.mkdir(parents=True, exist_ok=True)
+    return config_dir
 
-# Call the function
+# Call the function to create the directory on import
 ensure_config_dir()
-__all__ = ["ensure_config_dir"]
+__all__ = ["get_config_dir", "ensure_config_dir"]
