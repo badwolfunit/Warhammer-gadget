@@ -20,13 +20,13 @@ import json
 import os
 from pathlib import Path
 from texttable import Texttable
-from . import ensure_config_dir
+from . import get_config_dir
 
 
 def datasheetsfunct():
     # Lists available datasheets and allows user to select one to load
     print("Here are the available datasheets:")
-    datasheets_dir = ensure_config_dir()
+    datasheets_dir = get_config_dir()
     
     # Check if directory exists
     if not datasheets_dir.exists():
