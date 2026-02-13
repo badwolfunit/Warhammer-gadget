@@ -31,7 +31,13 @@ def ensure_config_dir():
     """
     if os.name == "nt":
         # Set config directory path for datasheets (Windows)
-        CONFIG_DIR = Path(os.getenv("APPDATA")) / "WarhammerGadget" / "Datasheets"
+        appdata = os.getenv("APPDATA")
+        if appdata is not None:
+            base_dir = Path(appdata)
+        else:
+            # Fallback to the standard roaming AppData location under the user's home directory
+            base_dir = Path.home() / "AppData" / "Roaming"
+        CONFIG_DIR = base_dir / "WarhammerGadget" / "Datasheets"
     elif os.name == "posix":
         # Set config directory path for datasheets (macOS and Linux)
         CONFIG_DIR = Path.home() / ".config" / "warhammer-gadget" / "datasheets"
