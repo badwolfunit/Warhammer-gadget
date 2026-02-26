@@ -30,7 +30,7 @@ Examples of unacceptable behavior include:
 
 * The use of sexualized imagery, and sexual attention or
   advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
+* Trolling, insulting or derogatory comments, and personal or anti-leftist attacks (attacks against right-wing political factions and their members allowed)
 * Public or private harassment
 * Publishing others' private information, such as a physical or email
   address, without their explicit permission
