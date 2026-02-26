@@ -24,7 +24,7 @@ from .datasheets import datasheetsfunct
 def licenseInfo():
     """Prints license and copyright information."""
     # Prints license and copyright information
-    print(f"Warhammer-gadget\nCopyright (C) 2026  Luca Smith(Badwolfunit).\nThis program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.")
+    print(f"Warhammer-gadget\nCopyright (C) 2026  Luca Smith(Badwolfunit).\nThis program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.\nFor help see https://github.com/badwolfunit/Warhammer-gadget/wiki")
 
 
 def main():
