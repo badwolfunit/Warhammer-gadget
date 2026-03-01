@@ -7,7 +7,7 @@ connective software (select stat and it rolls dice)
 
 This software is designed to help you play Warhammer using digital features. It is a work in progress as well as my first serious python project. It (should) support Windows, Linux and MacOS.
 
-## Currently in a pre-alpha stage
+## Currently preparing alpha release
 
 ## Features
 
