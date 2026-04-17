@@ -105,16 +105,12 @@
         "Point cost line 2",
         "Base Size: Base Size"
     ],
-    "transport": [
-        "Transport rules"
-    ],
+    "transport": "Transport rules",
     "damaged": {
-        "damage_range": "Damaged range",
+        "damaged_range": "Damaged range",
         "damaged_rule": "Damaged debuffs"
     },
-    "leader": {
-        "leader": false
-    },
+    "leader": false,
     "keywords": {
         "keywords":[
         "keywords",

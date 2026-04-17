@@ -231,7 +231,7 @@ def datasheetsfunct():
                 # Display damaged characteristics if they exist
                 if "damaged" in datasheet:
                     print(f"\nDamaged Characteristics:")
-                    print(f"Damaged Range: {datasheet['damaged']['damage_range']}")
+                    print(f"Damaged Range: {datasheet['damaged']['damaged_range']}")
                     print(f"Damaged Rule: {datasheet['damaged']['damaged_rule']}")
 
                 # Display leader rules if they exist
