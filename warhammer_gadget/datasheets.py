@@ -58,10 +58,11 @@ def datasheetsfunct():
                 datasheet = json.load(f)
             # Confirm successful load
             print(f"Datasheet '{chooseDatasheet}' loaded successfully.")
-            # Print datasheet content
+            # Print raw datasheet content
             if len(checkDatasheet) > 1 and checkDatasheet[1].upper() == "RAW":
                 print(json.dumps(datasheet, indent=4))
             else:
+                # Print formated datasheet content
                 # Display base stats
                 print(f"\nDatasheet Name: {datasheet['unit_name']}")
                 print(f"\nBase Stats:")
@@ -70,6 +71,7 @@ def datasheetsfunct():
                 base_stats.set_deco(Texttable.HEADER)
                 base_stats.set_cols_dtype(['t', 'a'])
                 base_stats.set_cols_align(["l", "r"])
+                # Table generation if the unit has an invulnerable save
                 if datasheet["stats"]["invulnerable_save"] is not None:
                     base_stats.add_rows([["Name", "Value"],
                                          ["Movement", str(datasheet["stats"]["movement"])+'"'],
@@ -79,6 +81,7 @@ def datasheetsfunct():
                                          ["Save", str(datasheet["stats"]["save"])+"+"],
                                          ["Objective Control", datasheet["stats"]["objective_control"]],
                                          ["Invulnerable Save", str(datasheet["stats"]["invulnerable_save"])+"+"]])
+                # Table generation ig the unit doesn't have an invulnerable save
                 else:
                     base_stats.add_rows([["Name", "Value"],
                                          ["Movement", str(datasheet["stats"]["movement"])+'"'],
