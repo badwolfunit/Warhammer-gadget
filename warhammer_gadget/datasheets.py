@@ -52,6 +52,7 @@ def datasheetsfunct():
     datasheetPath = datasheets_dir / f"{checkDatasheet[0]}.json"
     
     if datasheetPath.exists():
+        
         try:
             # Loads selected datasheet
             with open(datasheetPath) as f:
@@ -81,7 +82,7 @@ def datasheetsfunct():
                                          ["Save", str(datasheet["stats"]["save"])+"+"],
                                          ["Objective Control", datasheet["stats"]["objective_control"]],
                                          ["Invulnerable Save", str(datasheet["stats"]["invulnerable_save"])+"+"]])
-                # Table generation ig the unit doesn't have an invulnerable save
+                # Table generation if the unit doesn't have an invulnerable save
                 else:
                     base_stats.add_rows([["Name", "Value"],
                                          ["Movement", str(datasheet["stats"]["movement"])+'"'],
@@ -253,14 +254,22 @@ def datasheetsfunct():
                     print(datasheet["lore"])
                 else:
                     print("No Lore found.")
-
+        
+                return datasheet
             # Error handling
         except json.JSONDecodeError:
             print(f"Error: '{chooseDatasheet}.json' is not a valid JSON file.")
+            return None
         except Exception as e:
             print(f"Error loading datasheet: {e}")
+            return None
+        
+        
+    
     else:
         # Handle case where datasheet does not exist
         print(f"Datasheet '{chooseDatasheet}' not found. Check spelling and existence.")
         datasheetsfunct()
+    
+    
 

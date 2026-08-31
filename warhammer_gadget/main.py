@@ -20,6 +20,7 @@
 
 from .rollingdice import rollingDicefunct
 from .datasheets import datasheetsfunct
+from .connection import connection
 
 def licenseInfo():
     """Prints license and copyright information."""
@@ -31,8 +32,8 @@ def main():
     """Main entry point - prompts user to select dice rolling or datasheet viewing."""
     licenseInfo()
     # Asks user what function they want to use
-    print ("select Function")
-    print ("(D)ice or data(S)heets")
+    print ("Select function")
+    print ("(D)ice, data(S)heets or (I)ntergrated experience")
     # Get user input
     diceOrDataSheet: str = input()
     
@@ -44,6 +45,10 @@ def main():
     elif diceOrDataSheet in ("S", "s"):
         # Activate datasheet function
         datasheetsfunct()
+    elif diceOrDataSheet in ("I", "i"):
+        # Activate integrated experience function
+        
+        connection()
     else:
         # Invalid input handler
         print("Invalid input, please try again")

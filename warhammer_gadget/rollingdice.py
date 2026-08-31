@@ -39,3 +39,15 @@ def rollingDicefunct():
         print("Invalid input. Please enter a number.")
     except Exception as e:
         print(f"Error rolling dice: {e}")
+        
+def rollingDiceAPI(num_dice: int):
+    # Rolls a specified number of dice and returns the results
+    try:
+        if num_dice <= 0:
+            raise ValueError("Number of dice must be positive.")
+        
+        results = dice.roll(str(num_dice) + 'd6')
+        return results
+    except Exception as e:
+        print(f"Error rolling dice: {e}")
+        return None
